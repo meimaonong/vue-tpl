@@ -96,7 +96,7 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 .sys-side-menu {
   border-right: 1px solid #e9eced;

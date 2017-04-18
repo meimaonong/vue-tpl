@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="less">
 .sys-header {
     position: relative;
     z-index: 10;

@@ -4,7 +4,7 @@
 </div>
 </template>
 
-<style lang="scss">
+<style lang="less">
 .sys-footer {
 	position: absolute;
 	height: 0;

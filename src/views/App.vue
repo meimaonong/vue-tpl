@@ -71,7 +71,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 
 * {
     -webkit-box-sizing: border-box;
