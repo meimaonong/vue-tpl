@@ -13,12 +13,12 @@ let pluginsList = [
           VueRouter: 'vue-router',
           VueResource: 'vue-resource',
           Vuex: 'vuex',
-          ElementUI: 'element-ui',
+          // ElementUI: 'element-ui',
 
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery',
-          'window.$': 'jquery',
+          // $: 'jquery',
+          // jQuery: 'jquery',
+          // 'window.jQuery': 'jquery',
+          // 'window.$': 'jquery',
     })
 ]
 

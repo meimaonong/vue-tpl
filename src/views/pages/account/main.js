@@ -12,14 +12,15 @@ import storeArr from './**/vuex/store.js'
 // 导入 sys vuex
 import sysStoreArr from './../../public-resource/**/vuex/store.js'
 
+Vue = Vue.default
+VueRouter = VueRouter.default
+Vuex = Vuex.default
+
 // VueResource
 Vue.use(VueResource)
 
 // 配置路由
 Vue.use(VueRouter)
-
-// 配置ElementUI
-Vue.use(ElementUI)
 
 //路由封装函数
 Vue.prototype.JGO = JGO
