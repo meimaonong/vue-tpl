@@ -12,9 +12,6 @@ import storeArr from './**/vuex/store.js'
 // 导入 sys vuex
 import sysStoreArr from './../../public-resource/**/vuex/store.js'
 
-Vue = Vue.default
-VueRouter = VueRouter.default
-Vuex = Vuex.default
 
 // VueResource
 Vue.use(VueResource)

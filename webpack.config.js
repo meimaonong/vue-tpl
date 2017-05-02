@@ -5,6 +5,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var WebpackNotifierPlugin = require('webpack-notifier')
 
+const vuxLoader = require('vux-loader')
+
 // 插件列表
 let pluginsList = [
     new WebpackNotifierPlugin(),
@@ -105,9 +107,12 @@ entryKeys.map(function(key) {
     return key
 })
 
+//pluginsList.push('vux-ui');
+/*module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui']
+})*/
 
-
-module.exports = {
+let webpackConfig = {
   entry: entryArr,
   output: {
     path: path.resolve(__dirname, './'),
@@ -156,7 +161,8 @@ module.exports = {
       // 'vue$': 'vue/dist/vue.common.js',
       // 'vuex$': 'vuex/dist/vuex.js',
       // 'vue-router$': 'vue-router/dist/vue-router.common.js'
-    }
+    },
+    extensions: ['.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
@@ -167,6 +173,10 @@ module.exports = {
   },
   devtool: '#eval-source-map'
 }
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui', 'duplicate-style']
+})
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'

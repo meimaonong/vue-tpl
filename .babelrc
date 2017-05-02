@@ -6,6 +6,13 @@
   ],
   "plugins": [
   	["transform-object-rest-spread"],
-  	["transform-runtime"]
+  	["transform-runtime"],
+	  ["component", [
+	    {
+	      "libraryName": "mint-ui",
+	      "style": true
+	    }
+	  ]]
   ]
 }
+

@@ -12,9 +12,13 @@ import storeArr from './**/vuex/store.js'
 // 导入 sys vuex
 import sysStoreArr from './../../public-resource/**/vuex/store.js'
 
-Vue = Vue.default
-VueRouter = VueRouter.default
-Vuex = Vuex.default
+import { AlertPlugin } from 'vux'
+
+
+
+Vue.use(AlertPlugin) // 使用弹窗插件
+
+
 
 // VueResource
 Vue.use(VueResource)
