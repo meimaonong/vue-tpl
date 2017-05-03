@@ -1,6 +1,6 @@
 
 const index = r => require.ensure([], () => 
-	r(require('./components/index.vue')), 'chunks/index/chunk')
+	r(require('./components/index/index.vue')), 'chunks/index/chunk')
 
 
 // 路由控制器

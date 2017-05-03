@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-let vArr = ['vue', 'vue-router', 'vue-resource', 'vuex']
+let vArr = ['vue', 'vue-router', 'vue-resource', 'vuex', 'fastclick']
 
 if (process.env.NODE_ENV === 'production') {
 

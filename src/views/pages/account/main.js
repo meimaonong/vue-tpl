@@ -12,6 +12,17 @@ import storeArr from './**/vuex/store.js'
 // 导入 sys vuex
 import sysStoreArr from './../../public-resource/**/vuex/store.js'
 
+import { AlertPlugin } from 'vux'
+
+Vue = Vue.default
+VueRouter = VueRouter.default
+Vuex = Vuex.default
+VueResource = VueResource.default
+
+FastClick.attach(document.body)
+
+Vue.use(AlertPlugin) // 使用弹窗插件
+
 // VueResource
 Vue.use(VueResource)
 
@@ -36,7 +47,7 @@ router.beforeEach((to, from, next) => {
 
   // 如果控制器相同
   if (to.meta.ctrl == from.meta.ctrl) {
-  	 next()
+     next()
   } else {
     if (to.meta.ctrl == 'index') {
       from.meta.ctrl ? window.location = '/#' + to.fullPath : next()
@@ -59,7 +70,7 @@ mergeStore.forEach(function(value, index, array) {
 })
 
 const store = new Vuex.Store({
-	modules: storeObj
+  modules: storeObj
 })
 
 new Vue({

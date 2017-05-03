@@ -5,7 +5,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var WebpackNotifierPlugin = require('webpack-notifier')
 
-const vuxLoader = require('vux-loader')
+var vuxLoader = require('vux-loader')
+
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 // 插件列表
 let pluginsList = [
@@ -15,12 +18,8 @@ let pluginsList = [
           VueRouter: 'vue-router',
           VueResource: 'vue-resource',
           Vuex: 'vuex',
-          // ElementUI: 'element-ui',
 
-          // $: 'jquery',
-          // jQuery: 'jquery',
-          // 'window.jQuery': 'jquery',
-          // 'window.$': 'jquery',
+          FastClick: 'fastclick'
     })
 ]
 
@@ -72,7 +71,8 @@ entryKeys.map(function(key) {
             template: './src/tpl/tpl.html',
             hash: false,
             chunks: chunksArr
-          })
+          }),
+          new BundleAnalyzerPlugin({analyzerMode: 'static'})
       )
     } else {
         // 首页处理
@@ -175,26 +175,34 @@ let webpackConfig = {
 }
 
 module.exports = vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui', 'duplicate-style']
+  plugins: [
+    {
+      name: 'vux-ui'
+    },
+    {
+      name: 'less-theme',
+      path: 'src/common/style/theme.less'
+    }
+  ]
 })
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
-    // new webpack.DefinePlugin({
-    //   'process.env': {
-    //     NODE_ENV: '"production"'
-    //   }
-    // }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   sourceMap: true,
-    //   compress: {
-    //     warnings: false
-    //   }
-    // }),
-    // new webpack.LoaderOptionsPlugin({
-    //   minimize: true
-    // })
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
   ])
 }

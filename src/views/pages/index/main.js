@@ -14,11 +14,14 @@ import sysStoreArr from './../../public-resource/**/vuex/store.js'
 
 import { AlertPlugin } from 'vux'
 
+Vue = Vue.default
+VueRouter = VueRouter.default
+Vuex = Vuex.default
+VueResource = VueResource.default
 
+FastClick.attach(document.body)
 
 Vue.use(AlertPlugin) // 使用弹窗插件
-
-
 
 // VueResource
 Vue.use(VueResource)
