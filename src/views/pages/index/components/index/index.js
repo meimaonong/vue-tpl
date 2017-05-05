@@ -1,5 +1,5 @@
 
-import { XButton } from 'vux'
+import { XButton, ViewBox, XHeader, Tabbar, TabbarItem } from 'vux'
 
 let vm = null
 
@@ -38,6 +38,9 @@ export default {
 
   },
   components: {
-    XButton
+    XButton,
+    ViewBox,
+    XHeader,
+    Tabbar
   }
 }
